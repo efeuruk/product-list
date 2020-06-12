@@ -5,6 +5,7 @@ import { AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link } from '@
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -16,22 +17,35 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: "space-between"
         },
         linkContainer: {
+            width: "50%",
             display: "flex",
             justifyContent: "space-between",
-            background: "red"
         },
         basketButton: {
             marginRight: theme.spacing(2),
         },
         title: {
+            width: "15%",
             display: 'none',
             [theme.breakpoints.up('sm')]: {
                 display: 'block',
             },
         },
+        menuIcon: {
+            display: 'block',
+            [theme.breakpoints.up('sm')]: {
+                display: 'none',
+            },
+        },
         logo: {
             '&:hover': {
                 textDecoration: 'none'
+            },
+        },
+        shoppingBasket: {
+            marginRight: "50px",
+            [theme.breakpoints.up('sm')]: {
+                marginRight: "0"
             },
         },
         search: {
@@ -87,6 +101,7 @@ export const Header: React.FC = () => {
                             LOGO
                         </Link>
                     </Typography>
+                    <MenuIcon className={classes.menuIcon} />
                     <Box className={classes.linkContainer}>
                         <Typography className={classes.title} variant="h6" noWrap>
                             <Link className={classes.logo} href="#" onClick={preventDefault} color="inherit">
@@ -109,7 +124,7 @@ export const Header: React.FC = () => {
                         </Link>
                         </Typography>
                     </Box>
-                    <IconButton aria-label="show 17 new notifications" color="inherit">
+                    <IconButton className={classes.shoppingBasket} aria-label="show 17 new notifications" color="inherit">
                         <Badge badgeContent={17} color="secondary">
                             <ShoppingBasketIcon />
                         </Badge>
