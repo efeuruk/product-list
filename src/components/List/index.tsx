@@ -1,11 +1,10 @@
-// TODO: Action fonksiyonlarından yararlan
 import React from 'react'
 import { ListItem } from '../ListItem';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from "@material-ui/core";
 import { Box } from '@material-ui/core';
 import { useDispatch, useSelector, DefaultRootState } from "react-redux";
-import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from '../../redux/actions/actionTypes';
+import { addToBasket, removeFromBasket } from '../../redux/actions'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -37,8 +36,8 @@ export const List: React.FC = () => {
                     <ListItem
                         data={data}
                         dispatch={dispatch}
-                        addToBasket={ADD_TO_BASKET}
-                        removeFromBasket={REMOVE_FROM_BASKET}
+                        addToBasket={addToBasket}
+                        removeFromBasket={removeFromBasket}
                         classes={classes} />
                 ))}
             </Grid>

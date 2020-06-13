@@ -7,12 +7,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 
-
 interface Props {
     data: any;
     dispatch: any;
-    addToBasket: any;
-    removeFromBasket: any;
+    addToBasket: () => void;
+    removeFromBasket: () => void;
     classes: any;
 }
 
@@ -35,10 +34,10 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="secondary" onClick={() => dispatch({ type: addToBasket })}>
+                    <Button size="small" color="secondary" onClick={() => dispatch(addToBasket())}>
                         Add to Basket
                                     </Button>
-                    <Button size="small" color="default" onClick={() => dispatch({ type: removeFromBasket })}>
+                    <Button size="small" color="default" onClick={() => dispatch(removeFromBasket())}>
                         Remove From Basket
                                     </Button>
                 </CardActions>
