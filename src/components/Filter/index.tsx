@@ -1,10 +1,8 @@
 import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import {
-    Box, Card, CardContent, Typography,
-    List, ListItem, ListItemText, ListItemSecondaryAction, Checkbox
-} from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { useDispatch, useSelector, DefaultRootState } from "react-redux";
+import { FilterMenu } from '../FilterMenu';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -21,6 +19,10 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         filterTitle: {
             marginBottom: theme.spacing(2)
+        },
+        list: {
+            marginLeft: -theme.spacing(1),
+            marginRight: -theme.spacing(1)
         }
     }),
 );
@@ -33,66 +35,9 @@ export const Filter: React.FC = () => {
     const { categories, brands, priceMargins } = filterState;
     return (
         <Box className={classes.filter}>
-            <Card className={classes.card}>
-                <CardContent>
-                    <Typography className={classes.filterTitle} variant="h5">Categories</Typography>
-                    <List component="nav" aria-label="categories">
-                        {categories.map(categories => (
-                            <ListItem key={`${categories}`} divider>
-                                <ListItemText primary={`${categories}`} />
-                                <ListItemSecondaryAction>
-                                    <Checkbox
-                                        edge="end"
-                                        onChange={() => console.log("change")}
-                                        checked={true}
-                                        inputProps={{ 'aria-labelledby': "efe" }}
-                                    />
-                                </ListItemSecondaryAction>
-                            </ListItem>
-                        ))}
-                    </List>
-                </CardContent>
-            </Card>
-            <Card className={classes.card}>
-                <CardContent>
-                    <Typography className={classes.filterTitle} variant="h5">Brands</Typography>
-                    <List component="nav" aria-label="categories">
-                        {brands.map(brands => (
-                            <ListItem key={`${brands}`} divider>
-                                <ListItemText primary={`${brands}`} />
-                                <ListItemSecondaryAction>
-                                    <Checkbox
-                                        edge="end"
-                                        onChange={() => console.log("change")}
-                                        checked={true}
-                                        inputProps={{ 'aria-labelledby': "efe" }}
-                                    />
-                                </ListItemSecondaryAction>
-                            </ListItem>
-                        ))}
-                    </List>
-                </CardContent>
-            </Card>
-            <Card className={classes.card}>
-                <CardContent>
-                    <Typography className={classes.filterTitle} variant="h5">Price Margins</Typography>
-                    <List component="nav" aria-label="categories">
-                        {priceMargins.map(priceMargins => (
-                            <ListItem key={`${priceMargins}`} divider>
-                                <ListItemText primary={`${priceMargins}`} />
-                                <ListItemSecondaryAction>
-                                    <Checkbox
-                                        edge="end"
-                                        onChange={() => console.log("change")}
-                                        checked={true}
-                                        inputProps={{ 'aria-labelledby': "efe" }}
-                                    />
-                                </ListItemSecondaryAction>
-                            </ListItem>
-                        ))}
-                    </List>
-                </CardContent>
-            </Card>
+            <FilterMenu classes={classes} title="Categories" filterItems={categories} />
+            <FilterMenu classes={classes} title="Brands" filterItems={brands} />
+            <FilterMenu classes={classes} title="Price Margins" filterItems={priceMargins} />
         </Box>
     )
 }
