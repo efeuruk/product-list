@@ -19,20 +19,18 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
     return (
         <Grid item key={data.productName} className={classes.card}>
             <Card>
-                <CardActionArea>
-                    <CardMedia
-                        component="img"
-                        alt={data.image}
-                        height="auto"
-                        image={data.image}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {data.productName}
-                        </Typography>
-                        <Typography component="p">Price: {data.price} TL</Typography>
-                    </CardContent>
-                </CardActionArea>
+                <CardMedia
+                    component="img"
+                    alt={data.image}
+                    height="auto"
+                    image={data.image}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        {data.productName}
+                    </Typography>
+                    <Typography component="p">Price: {data.price} TL</Typography>
+                </CardContent>
                 <CardActions>
                     <Button size="small" color="secondary" onClick={() => dispatch(addToBasket())}>
                         Add to Basket

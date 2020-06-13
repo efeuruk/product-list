@@ -32,8 +32,9 @@ export const List: React.FC = () => {
         <Box>
             <Typography variant="h4" component="h2">Products</Typography>
             <Grid className={classes.cardContainer}>
-                {data.map(data => (
+                {data.map((data, index) => (
                     <ListItem
+                        key={index}
                         data={data}
                         dispatch={dispatch}
                         addToBasket={addToBasket}
