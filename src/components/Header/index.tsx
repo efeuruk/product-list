@@ -5,6 +5,7 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
+import { useSelector, DefaultRootState } from "react-redux";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -89,6 +90,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Header: React.FC = () => {
     const classes = useStyles();
+    const state: any = useSelector((state: DefaultRootState) => state);
+    const listItemsState = state.listItems;
     const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
     return (
         <div className={classes.root}>
@@ -123,7 +126,7 @@ export const Header: React.FC = () => {
                         </Typography>
                     </Box>
                     <IconButton className={classes.shoppingBasket} aria-label="show 17 new notifications" color="inherit">
-                        <Badge badgeContent={17} color="secondary">
+                        <Badge badgeContent={listItemsState.index} color="secondary">
                             <ShoppingBasketIcon />
                         </Badge>
                     </IconButton>
@@ -145,3 +148,5 @@ export const Header: React.FC = () => {
         </div>
     );
 }
+
+export default Header;

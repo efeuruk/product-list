@@ -35,3 +35,5 @@ export const Filter: React.FC = () => {
         </Box>
     )
 }
+
+export default Filter;
