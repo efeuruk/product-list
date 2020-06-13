@@ -1,7 +1,8 @@
 import React from 'react'
-import { connect } from 'react-redux';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
+import { useSelector, useDispatch } from "react-redux";
+import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from '../../redux/actions/actionTypes';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -13,18 +14,22 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const List: React.FC = () => {
-    const classes = useStyles();
+    const classes: any = useStyles();
+    const state: any = useSelector(state => state.listItems);
+    const dispatch: any = useDispatch();
     return (
         <Box className={classes.list}>
-            b
+            <h1>{state.index}</h1>
+            <button onClick={() =>
+                dispatch({
+                    type: ADD_TO_BASKET
+                })}>Coştur</button>
+            <button onClick={() =>
+                dispatch({
+                    type: REMOVE_FROM_BASKET
+                })}>Söndür :(</button>
         </Box>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        items: state.items
-    }
-}
-
-export default connect(mapStateToProps)(List)
+export default List;
