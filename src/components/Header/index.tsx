@@ -1,5 +1,3 @@
-/* TODO: Küçülme olduğunda hamburger menu eklenecek */
-
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link } from '@material-ui/core';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
@@ -43,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         shoppingBasket: {
-            marginRight: "50px",
+            marginRight: theme.spacing(4),
             [theme.breakpoints.up('sm')]: {
                 marginRight: "0"
             },

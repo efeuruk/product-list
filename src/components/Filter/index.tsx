@@ -1,28 +1,37 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import { Box, Card, CardContent, Typography } from '@material-ui/core';
 
-interface Person {
-    firstName: string;
-    lastName: string;
-}
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        filter: {
+            marginRight: theme.spacing(3),
+            background: "red",
+            padding: theme.spacing(8)
+        },
+        card: {
+            padding: theme.spacing(3),
+            marginBottom: theme.spacing(3)
+        }
+    }),
+);
 
-interface Props {
-    text: string;
-    // optional
-    ok?: boolean;
-    i?: number;
-    fn?: (bob: string) => string;
-    person: Person;
-}
-
-export const Filters: React.FC<Props> = () => {
-    // Hooks
-    const [count, setCount] = useState<number | null>(5);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const divRef = useRef<HTMLDivElement>(null);
-
+export const Filter: React.FC = () => {
+    const classes = useStyles();
     return (
-        <div ref={divRef}>
-            <input ref={inputRef} />
-        </div>
+        <Box className={classes.filter}>
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography>Bilgisayarlar</Typography>
+                    <Typography>10 ürün var</Typography>
+                </CardContent>
+            </Card>
+            <Card className={classes.card}>
+                <CardContent>
+                    <Typography>Bilgisayarlar</Typography>
+                    <Typography>10 ürün var</Typography>
+                </CardContent>
+            </Card>
+        </Box>
     )
 }

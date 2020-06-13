@@ -1,28 +1,30 @@
-import React, { useState, useRef } from 'react'
+import React from 'react'
+import { connect } from 'react-redux';
+import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import { Box } from '@material-ui/core';
 
-interface Person {
-    firstName: string;
-    lastName: string;
-}
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        list: {
+            flexGrow: 1,
+            background: "blue"
+        }
+    }),
+);
 
-interface Props {
-    text: string;
-    // optional
-    ok?: boolean;
-    i?: number;
-    fn?: (bob: string) => string;
-    person: Person;
-}
-
-export const List: React.FC<Props> = () => {
-    // Hooks
-    const [count, setCount] = useState<number | null>(5);
-    const inputRef = useRef<HTMLInputElement>(null);
-    const divRef = useRef<HTMLDivElement>(null);
-
+export const List: React.FC = () => {
+    const classes = useStyles();
     return (
-        <div ref={divRef}>
-            <input ref={inputRef} />
-        </div>
+        <Box className={classes.list}>
+            b
+        </Box>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+}
+
+export default connect(mapStateToProps)(List)
