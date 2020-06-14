@@ -11,13 +11,11 @@ interface Props {
   filterFunction: (value: string) => void;
   renderAll: () => void;
   dispatch?: any;
-  globalState: any;
 }
 
 export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
-  filterFunction, renderAll, dispatch, globalState }) => {
+  filterFunction, renderAll, dispatch }) => {
   const [checked, setChecked] = React.useState([]);
-  const { listItems, filters } = globalState;
 
   const handleChange = (index: never) => (event: React.ChangeEvent<HTMLInputElement>) => {
     const currentIndex = checked.indexOf(index);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link, Menu, MenuItem } from '@material-ui/core';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SearchIcon from '@material-ui/icons/Search';
@@ -91,7 +91,34 @@ const useStyles = makeStyles((theme: Theme) =>
 export const Header: React.FC = () => {
     const classes = useStyles();
     const state: any = useSelector((state: DefaultRootState) => state);
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const isMenuOpen = Boolean(anchorEl);
     const listItemsState = state.listItems;
+
+    const handleBasketOpen = (event: React.MouseEvent<HTMLElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleBasketClose = () => {
+        setAnchorEl(null);
+    };
+
+    const menuId = 'basket'
+    const renderMenu = (
+        <Menu
+            anchorEl={anchorEl}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            id={menuId}
+            keepMounted
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            open={isMenuOpen}
+            onClose={handleBasketClose}
+        >
+            <MenuItem onClick={handleBasketClose}>Profile</MenuItem>
+            <MenuItem onClick={handleBasketClose}>My account</MenuItem>
+        </Menu>
+    );
+
     const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
     return (
         <div className={classes.root}>
@@ -125,7 +152,13 @@ export const Header: React.FC = () => {
                         </Link>
                         </Typography>
                     </Box>
-                    <IconButton className={classes.shoppingBasket} aria-label={`show ${listItemsState.index} new notifications`} color="inherit">
+                    <IconButton
+                        className={classes.shoppingBasket}
+                        aria-controls={menuId}
+                        aria-haspopup="true"
+                        onClick={handleBasketOpen}
+                        aria-label={`show ${listItemsState.index} new notifications`}
+                        color="inherit">
                         <Badge badgeContent={listItemsState.index} color="secondary">
                             <ShoppingBasketIcon />
                         </Badge>
@@ -145,6 +178,7 @@ export const Header: React.FC = () => {
                     </div>
                 </Toolbar>
             </AppBar>
+            {renderMenu}
         </div>
     );
 }
