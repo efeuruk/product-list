@@ -28,7 +28,6 @@ export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
       newChecked.splice(currentIndex, 1);
     }
     setChecked(newChecked);
-
     event.target.checked ? dispatch(filterFunction((event.target.value).toString())) : dispatch(renderAll());
   };
 
@@ -38,13 +37,13 @@ export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
         <Typography className={classes.filterTitle} align="center" variant="h5">{title}</Typography>
         <List className={classes.list} component="nav" aria-label="categories">
           {filterItems.map((filterItem, index: never) => (
-            <ListItem key={`${filterItem}`} divider>
-              <ListItemText primary={`${filterItem}`} />
+            <ListItem key={`${filterItem.id}`} divider>
+              <ListItemText primary={`${filterItem.name}`} />
               <ListItemSecondaryAction>
                 <Checkbox
                   edge="end"
                   onChange={handleChange(index)}
-                  value={filterItem}
+                  value={filterItem.id}
                   checked={checked.indexOf(index) !== -1}
                 />
               </ListItemSecondaryAction>

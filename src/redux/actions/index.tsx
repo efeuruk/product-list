@@ -18,4 +18,9 @@ export const filterBrand = (value?: string) => ({
     payload: value
 })
 
+export const filterPriceMargin = (value?: string) => ({
+    type: actionTypes.FILTER_PRICE,
+    payload: value
+})
+
 export const renderAll = () => ({ type: actionTypes.RENDER_ALL })

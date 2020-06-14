@@ -2,7 +2,7 @@ import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 import { useDispatch, useSelector, useStore, DefaultRootState } from "react-redux";
-import { renderAll, filterCategory, filterBrand } from '../../redux/actions'
+import { renderAll, filterCategory, filterBrand, filterPriceMargin } from '../../redux/actions'
 import { FilterMenu } from '../FilterMenu';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -53,9 +53,14 @@ export const Filter: React.FC = () => {
                 renderAll={renderAll}
                 dispatch={dispatch}
                 globalState={store.getState()} />
-
-            {/* <FilterMenu classes={classes} title="Brands" filterItems={brands} />
-            <FilterMenu classes={classes} title="Price Margins" filterItems={priceMargins} /> */}
+            <FilterMenu
+                classes={classes}
+                title="Price Margins"
+                filterItems={priceMargins}
+                filterFunction={filterPriceMargin}
+                renderAll={renderAll}
+                dispatch={dispatch}
+                globalState={store.getState()} />
         </Box>
     )
 }
