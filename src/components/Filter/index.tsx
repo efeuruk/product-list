@@ -1,7 +1,8 @@
 import React from 'react'
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
-import { useDispatch, useSelector, DefaultRootState } from "react-redux";
+import { useDispatch, useSelector, useStore, DefaultRootState } from "react-redux";
+import { renderAll, filterCategory, filterBrand } from '../../redux/actions'
 import { FilterMenu } from '../FilterMenu';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,15 +30,32 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const Filter: React.FC = () => {
     const classes = useStyles();
+    const store = useStore();
     const dispatch: any = useDispatch();
     const state: any = useSelector((state: DefaultRootState) => state);
     const filterState = state.filters;
     const { categories, brands, priceMargins } = filterState;
     return (
         <Box className={classes.filter}>
-            <FilterMenu classes={classes} title="Categories" filterItems={categories} />
-            <FilterMenu classes={classes} title="Brands" filterItems={brands} />
-            <FilterMenu classes={classes} title="Price Margins" filterItems={priceMargins} />
+            <FilterMenu
+                classes={classes}
+                title="Categories"
+                filterItems={categories}
+                filterFunction={filterCategory}
+                renderAll={renderAll}
+                dispatch={dispatch}
+                globalState={store.getState()} />
+            <FilterMenu
+                classes={classes}
+                title="Brands"
+                filterItems={brands}
+                filterFunction={filterBrand}
+                renderAll={renderAll}
+                dispatch={dispatch}
+                globalState={store.getState()} />
+
+            {/* <FilterMenu classes={classes} title="Brands" filterItems={brands} />
+            <FilterMenu classes={classes} title="Price Margins" filterItems={priceMargins} /> */}
         </Box>
     )
 }

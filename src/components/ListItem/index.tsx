@@ -1,7 +1,6 @@
 import React from 'react'
 import { Grid, Typography } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -22,12 +21,11 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
                 <CardMedia
                     component="img"
                     alt={data.image}
-                    height="auto"
                     image={data.image}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {data.productName}
+                        {data.productName}, {data.category}
                     </Typography>
                     <Typography component="p">Price: {data.price} TL</Typography>
                 </CardContent>

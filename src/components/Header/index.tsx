@@ -125,7 +125,7 @@ export const Header: React.FC = () => {
                         </Link>
                         </Typography>
                     </Box>
-                    <IconButton className={classes.shoppingBasket} aria-label="show 17 new notifications" color="inherit">
+                    <IconButton className={classes.shoppingBasket} aria-label={`show ${listItemsState.index} new notifications`} color="inherit">
                         <Badge badgeContent={listItemsState.index} color="secondary">
                             <ShoppingBasketIcon />
                         </Badge>

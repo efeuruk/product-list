@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         card: {
             margin: theme.spacing(1),
-            minWidth: "100%",
             [theme.breakpoints.up('sm')]: {
                 minWidth: "calc(33% - 10px)"
             },
@@ -30,9 +29,9 @@ export const List: React.FC = () => {
     const { data } = listItemsState;
     return (
         <Box>
-            <Typography variant="h4" component="h2">Products</Typography>
+            <Typography variant="h4" component="h2" align="center">Products</Typography>
             <Grid className={classes.cardContainer}>
-                {data.map((data, index) => (
+                {state.filters.filteredResult.map((data, index) => (
                     <ListItem
                         key={index}
                         data={data}
