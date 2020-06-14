@@ -91,6 +91,9 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         card: {
             maxWidth: "200px"
+        },
+        empty: {
+            padding: theme.spacing(3)
         }
     }),
 );
@@ -123,35 +126,37 @@ export const Header: React.FC = () => {
         >
             {/* tıklanan current elementin stateini burada göster, eğer boşsa sepet boş yazdır */}
             {console.log(listItemsState.basketData)}
-            {
-                listItemsState.basketData.map((data) => {
-                    return (
-                        <Box key={data[0]?.id}>
-                            <MenuItem onClick={handleBasketClose}>
-                                <Card className={classes.card} key={data[0]?.id}>
-                                    <CardMedia
-                                        component="img"
-                                        alt={data[0]?.image}
-                                        image={data[0]?.image}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2">
-                                            {data[0]?.productName}, {data[0]?.category}
-                                        </Typography>
-                                        <Typography component="p">Price: {data[0].price} TL</Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button size="small" color="default" onClick={() => console.log("dispatch")}>
-                                            Remove From Basket
+            {(listItemsState.basketData.length > 0) ? listItemsState.basketData?.map((data) => {
+                return (
+                    <Box>
+                        <MenuItem>
+                            <Card className={classes.card} key={data[0]?.id}>
+                                <CardMedia
+                                    component="img"
+                                    alt={data[0]?.image}
+                                    image={data[0]?.image}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="h2">
+                                        {data[0]?.productName}, {data[0]?.category}
+                                    </Typography>
+                                    <Typography component="p">Price: {data[0]?.price} TL</Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Button size="small" color="default" onClick={() => console.log("dispatch")}>
+                                        Remove From Basket
                                         </Button>
-                                    </CardActions>
-                                </Card>
-                            </MenuItem>
-                            <Divider />
-                        </Box>
+                                </CardActions>
+                            </Card>
+                        </MenuItem>
+                        <Divider />
+                    </Box>
+                )
+            }) :
+                <MenuItem className={classes.empty}>
+                    <Typography>Basket is empty</Typography>
+                </MenuItem>
 
-                    )
-                })
             }
         </Menu>
     );

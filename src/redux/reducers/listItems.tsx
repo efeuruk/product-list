@@ -6,6 +6,10 @@ const initialState = {
     basketData: []
 }
 
+function popElement(basketData) {
+    basketData.pop();
+}
+
 export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_BASKET:
@@ -19,9 +23,11 @@ export default (state = initialState, action) => {
             }
         case REMOVE_FROM_BASKET:
             if (state.index > 0) {
+                console.log(action.payload)
                 return {
                     ...state,
-                    index: state.index - 1
+                    index: state.index - 1,
+                    basketData: state.basketData.pop(),
                 }
             }
             else {

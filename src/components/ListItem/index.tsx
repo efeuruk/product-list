@@ -32,10 +32,10 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
                 <CardActions>
                     <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
                         Add to Basket
-                                    </Button>
+                    </Button>
                     <Button size="small" color="default" onClick={() => dispatch(removeFromBasket(data.id))}>
                         Remove From Basket
-                                    </Button>
+                    </Button>
                 </CardActions>
             </Card>
         </Grid>
