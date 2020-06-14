@@ -8,15 +8,18 @@ import { addToBasket, removeFromBasket } from '../../redux/actions'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        cardContainer: {
+        container: {
             display: "flex",
             flexWrap: "wrap"
         },
-        card: {
+        cardContainer: {
             margin: theme.spacing(1),
             [theme.breakpoints.up('sm')]: {
-                minWidth: "calc(33% - 10px)"
+                minWidth: "calc(20% - 10px)",
             },
+        },
+        card: {
+            maxWidth: "350px"
         }
     }),
 );
@@ -29,8 +32,8 @@ export const List: React.FC = () => {
     const { data } = listItemsState;
     return (
         <Box>
-            <Typography variant="h4" component="h2" align="center">Products</Typography>
-            <Grid className={classes.cardContainer}>
+            <Typography variant="h4" component="h2" style={{ marginLeft: "8px" }}>Products</Typography>
+            <Grid className={classes.container}>
                 {state.filters.filteredResult.map((data, index) => (
                     <ListItem
                         key={index}

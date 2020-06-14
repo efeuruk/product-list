@@ -16,8 +16,8 @@ interface Props {
 
 export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeFromBasket, classes }) => {
     return (
-        <Grid item key={data.productName} className={classes.card}>
-            <Card>
+        <Grid item key={data.productName} className={classes.cardContainer}>
+            <Card className={classes.card}>
                 <CardMedia
                     component="img"
                     alt={data.image}

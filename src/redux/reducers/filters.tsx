@@ -74,12 +74,10 @@ export default (state = initialState, action) => {
         case FILTER_PRICE:
             const lowerBound = parseInt(action.payload.split(',')[0]);
             const higherBound = parseInt(action.payload.split(',')[1]);
-            const margin = lowerBound - higherBound;
             return {
                 ...state,
                 filteredResult: itemList.filter(item => {
-                    if ((item.price >= lowerBound && item.price <= higherBound))
-                        return item
+                    return (item.price >= lowerBound && item.price <= higherBound) ? item : ''
                 })
             }
         default:

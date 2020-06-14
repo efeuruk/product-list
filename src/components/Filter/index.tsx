@@ -12,7 +12,11 @@ const useStyles = makeStyles((theme: Theme) =>
             marginRight: theme.spacing(3),
             background: "#959595",
             padding: theme.spacing(3),
-            height: "100%"
+            height: "100%",
+            width: "100%",
+            [theme.breakpoints.up('sm')]: {
+                width: "auto"
+            },
         },
         card: {
             minWidth: 200,
