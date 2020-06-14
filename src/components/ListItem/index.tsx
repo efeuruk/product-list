@@ -9,8 +9,8 @@ import Button from "@material-ui/core/Button";
 interface Props {
     data: any;
     dispatch: any;
-    addToBasket: () => void;
-    removeFromBasket: () => void;
+    addToBasket: (id: number) => void;
+    removeFromBasket: (id: number) => void;
     classes: any;
 }
 
@@ -30,10 +30,10 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
                     <Typography component="p">Price: {data.price} TL</Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" color="secondary" onClick={() => dispatch(addToBasket())}>
+                    <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
                         Add to Basket
                                     </Button>
-                    <Button size="small" color="default" onClick={() => dispatch(removeFromBasket())}>
+                    <Button size="small" color="default" onClick={() => dispatch(removeFromBasket(data.id))}>
                         Remove From Basket
                                     </Button>
                 </CardActions>

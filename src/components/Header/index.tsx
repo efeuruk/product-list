@@ -1,5 +1,9 @@
+// TODO: Search Ekle
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link, Menu, MenuItem } from '@material-ui/core';
+import {
+    AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link, Menu, MenuItem, Divider
+    , Card, CardMedia, CardContent, CardActions, Button
+} from '@material-ui/core';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SearchIcon from '@material-ui/icons/Search';
@@ -85,6 +89,9 @@ const useStyles = makeStyles((theme: Theme) =>
                 },
             },
         },
+        card: {
+            maxWidth: "200px"
+        }
     }),
 );
 
@@ -114,8 +121,38 @@ export const Header: React.FC = () => {
             open={isMenuOpen}
             onClose={handleBasketClose}
         >
-            <MenuItem onClick={handleBasketClose}>Profile</MenuItem>
-            <MenuItem onClick={handleBasketClose}>My account</MenuItem>
+            {/* tıklanan current elementin stateini burada göster, eğer boşsa sepet boş yazdır */}
+            {console.log(listItemsState.basketData)}
+            {
+                listItemsState.basketData.map((data) => {
+                    return (
+                        <Box key={data[0]?.id}>
+                            <MenuItem onClick={handleBasketClose}>
+                                <Card className={classes.card} key={data[0]?.id}>
+                                    <CardMedia
+                                        component="img"
+                                        alt={data[0]?.image}
+                                        image={data[0]?.image}
+                                    />
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                            {data[0]?.productName}, {data[0]?.category}
+                                        </Typography>
+                                        <Typography component="p">Price: {data[0].price} TL</Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button size="small" color="default" onClick={() => console.log("dispatch")}>
+                                            Remove From Basket
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </MenuItem>
+                            <Divider />
+                        </Box>
+
+                    )
+                })
+            }
         </Menu>
     );
 
@@ -168,7 +205,7 @@ export const Header: React.FC = () => {
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Products..."
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,

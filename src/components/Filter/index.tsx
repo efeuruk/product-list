@@ -8,15 +8,14 @@ import { FilterMenu } from '../FilterMenu';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         filter: {
-            margin: "24px auto 24px",
+            margin: theme.spacing(3, 0, 3),
             background: "#959595",
             padding: theme.spacing(3),
             height: "100%",
             width: "100%",
             [theme.breakpoints.up('sm')]: {
                 width: "auto",
-                marginTop: theme.spacing(6),
-                marginRight: theme.spacing(3)
+                margin: theme.spacing(6, 6, 0, 0),
             },
         },
         card: {

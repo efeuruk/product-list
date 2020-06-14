@@ -3,16 +3,19 @@ import { itemList } from '../../data/mockData';
 
 const initialState = {
     index: 0,
-    data: itemList
+    basketData: []
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
         case ADD_TO_BASKET:
+            console.log(action.payload)
             return {
                 ...state,
-                // index: state.index + action.payload
-                index: state.index + 1
+                index: state.index + 1,
+                basketData: [...state.basketData, itemList.filter(item => {
+                    return item.id === action.payload
+                })],
             }
         case REMOVE_FROM_BASKET:
             if (state.index > 0) {

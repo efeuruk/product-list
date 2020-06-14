@@ -16,9 +16,7 @@ const rootElement = document.getElementById('root')
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </Provider>,
   rootElement);
 

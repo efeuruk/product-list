@@ -1,11 +1,13 @@
 import actionTypes from "./actionTypes";
 
-export const addToBasket = () => ({
+export const addToBasket = (id: number) => ({
     type: actionTypes.ADD_TO_BASKET,
+    payload: id
 });
 
-export const removeFromBasket = () => ({
-    type: actionTypes.REMOVE_FROM_BASKET
+export const removeFromBasket = (id: number) => ({
+    type: actionTypes.REMOVE_FROM_BASKET,
+    payload: id
 })
 
 export const filterCategory = (value?: string) => ({

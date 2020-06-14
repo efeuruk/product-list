@@ -1,5 +1,6 @@
 export const itemList = [
   {
+    id: 0,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Asus 1",
@@ -8,6 +9,7 @@ export const itemList = [
     brand: "Asus",
   },
   {
+    id: 1,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Asus 2",
@@ -16,6 +18,7 @@ export const itemList = [
     brand: "Asus",
   },
   {
+    id: 2,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Samsung 1",
@@ -24,6 +27,7 @@ export const itemList = [
     brand: "Samsung",
   },
   {
+    id: 3,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Samsung 2",
@@ -32,6 +36,7 @@ export const itemList = [
     brand: "Samsung",
   },
   {
+    id: 4,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Monster 1",
@@ -40,6 +45,7 @@ export const itemList = [
     brand: "Monster",
   },
   {
+    id: 5,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Monster 2",
@@ -48,6 +54,7 @@ export const itemList = [
     brand: "Monster",
   },
   {
+    id: 6,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Macbook 1",
@@ -56,6 +63,7 @@ export const itemList = [
     brand: "Macbook",
   },
   {
+    id: 7,
     image:
       "https://images.pexels.com/photos/695644/pexels-photo-695644.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     productName: "Macbook 2",
