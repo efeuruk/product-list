@@ -10,11 +10,10 @@ interface Props {
     data: any;
     dispatch: any;
     addToBasket: (id: number) => void;
-    removeFromBasket: (id: number) => void;
     classes: any;
 }
 
-export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeFromBasket, classes }) => {
+export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, classes }) => {
     return (
         <Grid item key={data.productName} className={classes.cardContainer}>
             <Card className={classes.card}>
@@ -32,9 +31,6 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, removeF
                 <CardActions>
                     <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
                         Add to Basket
-                    </Button>
-                    <Button size="small" color="default" onClick={() => dispatch(removeFromBasket(data.id))}>
-                        Remove From Basket
                     </Button>
                 </CardActions>
             </Card>

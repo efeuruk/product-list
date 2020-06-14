@@ -9,7 +9,8 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
-import { useSelector, DefaultRootState } from "react-redux";
+import { useDispatch, useSelector, DefaultRootState } from "react-redux";
+import { removeFromBasket } from '../../redux/actions'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -90,20 +91,26 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         card: {
-            maxWidth: "200px"
+            maxWidth: "300px",
+            margin: theme.spacing(0, "10px")
         },
         empty: {
             padding: theme.spacing(3)
+        },
+        button: {
+            margin: theme.spacing(0, "auto")
         }
     }),
 );
 
 export const Header: React.FC = () => {
     const classes = useStyles();
+    const dispatch: any = useDispatch();
     const state: any = useSelector((state: DefaultRootState) => state);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const isMenuOpen = Boolean(anchorEl);
     const listItemsState = state.listItems;
+    const { basketData } = listItemsState
 
     const handleBasketOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -124,11 +131,11 @@ export const Header: React.FC = () => {
             open={isMenuOpen}
             onClose={handleBasketClose}
         >
-            {/* tıklanan current elementin stateini burada göster, eğer boşsa sepet boş yazdır */}
-            {console.log(listItemsState.basketData)}
-            {(listItemsState.basketData.length > 0) ? listItemsState.basketData?.map((data) => {
+            {console.log(basketData)}
+            {(basketData.length > 0) ? basketData?.map((data, index) => {
+                console.log(data)
                 return (
-                    <Box>
+                    <Box key={index}>
                         <MenuItem>
                             <Card className={classes.card} key={data[0]?.id}>
                                 <CardMedia
@@ -143,7 +150,7 @@ export const Header: React.FC = () => {
                                     <Typography component="p">Price: {data[0]?.price} TL</Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small" color="default" onClick={() => console.log("dispatch")}>
+                                    <Button className={classes.button} variant="contained" color="secondary" disableElevation onClick={() => dispatch(removeFromBasket(0))}>
                                         Remove From Basket
                                         </Button>
                                 </CardActions>

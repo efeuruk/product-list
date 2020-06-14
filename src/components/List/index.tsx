@@ -5,7 +5,7 @@ import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography } from "@material-ui/core";
 import { Box } from '@material-ui/core';
 import { useDispatch, useSelector, DefaultRootState } from "react-redux";
-import { addToBasket, removeFromBasket } from '../../redux/actions'
+import { addToBasket } from '../../redux/actions'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,7 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         card: {
-            maxWidth: "350px"
+            width: "100%",
+            [theme.breakpoints.up('sm')]: {
+                maxWidth: "350px",
+            },
         }
     }),
 );
@@ -41,7 +44,6 @@ export const List: React.FC = () => {
                         data={data}
                         dispatch={dispatch}
                         addToBasket={addToBasket}
-                        removeFromBasket={removeFromBasket}
                         classes={classes} />
                 ))}
             </Grid>

@@ -1,3 +1,4 @@
+// REMOVE_FROM_BASKET'i implemente et, 
 import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "../actions/actionTypes";
 import { itemList } from '../../data/mockData';
 
@@ -6,11 +7,7 @@ const initialState = {
     basketData: []
 }
 
-function popElement(basketData) {
-    basketData.pop();
-}
-
-export default (state = initialState, action) => {
+export default (state = initialState, action: any) => {
     switch (action.type) {
         case ADD_TO_BASKET:
             console.log(action.payload)
@@ -27,7 +24,7 @@ export default (state = initialState, action) => {
                 return {
                     ...state,
                     index: state.index - 1,
-                    basketData: state.basketData.pop(),
+                    basketData: state.basketData.splice(action.payload, 1)
                 }
             }
             else {
