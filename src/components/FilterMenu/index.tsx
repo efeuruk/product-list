@@ -25,8 +25,10 @@ export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
 		} else {
 			newChecked.splice(currentIndex, 1);
 		}
+
 		setChecked(newChecked);
-		event.target.checked ? dispatch(filterFunction((event.target.value).toString())) : dispatch(renderAll());
+		// toplam state bir array olarak yollanmalı
+		event.target.checked ? dispatch(filterFunction(event.target.value)) : dispatch(renderAll());
 	};
 
 	return (

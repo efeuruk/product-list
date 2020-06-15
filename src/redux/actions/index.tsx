@@ -10,17 +10,23 @@ export const removeFromBasket = (id: object) => ({
     payload: id
 })
 
-export const filterCategory = (value?: string) => ({
+export const search = (query: string) => ({
+    type: actionTypes.SEARCH,
+    payload: query
+})
+
+
+export const filterCategory = (value: any) => ({
     type: actionTypes.FILTER_CATEGORY,
     payload: value
 })
 
-export const filterBrand = (value?: string) => ({
+export const filterBrand = (value: string) => ({
     type: actionTypes.FILTER_BRAND,
     payload: value
 })
 
-export const filterPriceMargin = (value?: string) => ({
+export const filterPriceMargin = (value: string) => ({
     type: actionTypes.FILTER_PRICE,
     payload: value
 })

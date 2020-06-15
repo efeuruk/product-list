@@ -10,7 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import Badge from '@material-ui/core/Badge';
 import { useDispatch, useSelector, DefaultRootState } from "react-redux";
-import { removeFromBasket } from '../../redux/actions'
+import { removeFromBasket, search } from '../../redux/actions'
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -111,6 +111,10 @@ export const Header: React.FC = () => {
     const isMenuOpen = Boolean(anchorEl);
     const basketState = state.basket;
     const { basketData } = basketState
+
+    const handleSearch = (event) => {
+        dispatch(search(event.target.value))
+    }
 
     const handleBasketOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -220,6 +224,7 @@ export const Header: React.FC = () => {
                                 input: classes.inputInput,
                             }}
                             inputProps={{ 'aria-label': 'search' }}
+                            onChange={handleSearch}
                         />
                     </div>
                 </Toolbar>

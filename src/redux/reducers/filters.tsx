@@ -1,14 +1,16 @@
-import { FILTER_CATEGORY, FILTER_BRAND, FILTER_PRICE, RENDER_ALL } from "../actions/actionTypes";
+import { FILTER_CATEGORY, FILTER_BRAND, FILTER_PRICE, RENDER_ALL, SEARCH } from "../actions/actionTypes";
 import itemList from '../../data/itemList.json';
 import filterList from '../../data/filterList.json';
 
 interface State {
     filteredResult: {}[]
+    search: string;
 }
 
 const initialState: State = {
     ...filterList,
-    filteredResult: itemList
+    filteredResult: itemList,
+    search: ''
 }
 
 export default (state = initialState, action) => {
@@ -18,8 +20,16 @@ export default (state = initialState, action) => {
                 ...state,
                 filteredResult: itemList
             }
+        case SEARCH:
+            return {
+                ...state,
+                filteredResult: itemList.filter(item => {
+                    return item.productName.toLowerCase().includes(action.payload.toLowerCase()) ||
+                        item.brand.toLowerCase().includes(action.payload.toLowerCase())
+                })
+            }
         case FILTER_CATEGORY:
-            console.log(action.payload[0])
+            console.log(action.payload)
             return {
                 ...state,
                 // Item list boşsa direkt olarak filtre ekelemesi yap, doluysa yeni eklenen filtreleri buraya ekle 
