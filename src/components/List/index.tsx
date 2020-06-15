@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
             [theme.breakpoints.up('sm')]: {
                 maxWidth: "350px",
             },
+        },
+        notAvailable: {
+            marginLeft: theme.spacing(1)
         }
     }),
 );
@@ -32,18 +35,21 @@ export const List: React.FC = () => {
     const classes: any = useStyles();
     const dispatch: any = useDispatch();
     const state: any = useSelector((state: DefaultRootState) => state);
+    const filterState = state.filters;
     return (
         <Box>
             <Typography variant="h4" component="h2" style={{ marginLeft: "8px" }}>Products</Typography>
             <Grid className={classes.container}>
-                {state.filters.filteredResult.map((data, index) => (
+                {(filterState.filteredResult.length > 0) ? filterState.filteredResult.map((data, index) => (
                     <ListItem
                         key={index}
                         data={data}
                         dispatch={dispatch}
                         addToBasket={addToBasket}
                         classes={classes} />
-                ))}
+                )) :
+                    <Typography className={classes.notAvailable}>This product is not available</Typography>
+                }
             </Grid>
         </Box>
     )

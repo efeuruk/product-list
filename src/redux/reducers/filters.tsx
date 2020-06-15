@@ -24,8 +24,9 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 filteredResult: itemList.filter(item => {
-                    return item.productName.toLowerCase().includes(action.payload.toLowerCase()) ||
-                        item.brand.toLowerCase().includes(action.payload.toLowerCase())
+                    return item.productName.toLowerCase().includes(action.payload.toLowerCase())
+                        || item.brand.toLowerCase().includes(action.payload.toLowerCase())
+                        || item.category.toLowerCase().includes(action.payload.toLowerCase())
                 })
             }
         case FILTER_CATEGORY:
