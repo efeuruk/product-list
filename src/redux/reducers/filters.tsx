@@ -33,7 +33,6 @@ export default (state = initialState, action) => {
             console.log(action.payload)
             return {
                 ...state,
-                // Item list boşsa direkt olarak filtre ekelemesi yap, doluysa yeni eklenen filtreleri buraya ekle 
                 filteredResult: itemList.filter(item => {
                     return item.category === action.payload;
                 })

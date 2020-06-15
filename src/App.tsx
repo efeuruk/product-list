@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
     main: {
       display: "flex",
       flexWrap: "wrap",
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(6),
       [theme.breakpoints.up('sm')]: {
         flexWrap: "noWrap"
       },

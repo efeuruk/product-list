@@ -5,6 +5,8 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
+
 
 interface Props {
     data: any;
@@ -22,17 +24,19 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, classes
                     alt={data.image}
                     image={data.image}
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {data.productName}, {data.category}
-                    </Typography>
-                    <Typography component="p">Price: {data.price} TL</Typography>
-                </CardContent>
-                <CardActions>
-                    <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
-                        Add to Basket
-                    </Button>
-                </CardActions>
+                <Box className={classes.cardContent}>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {data.productName}, {data.category}
+                        </Typography>
+                        <Typography component="p">Price: {data.price} TL</Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
+                            Add to Basket
+                        </Button>
+                    </CardActions>
+                </Box>
             </Card>
         </Grid>
     )

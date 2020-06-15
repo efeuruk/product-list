@@ -1,4 +1,3 @@
-// TODO: Search Ekle
 import React from 'react';
 import {
     AppBar, Toolbar, IconButton, Typography, Box, InputBase, Link, Menu, MenuItem, Divider
@@ -112,7 +111,7 @@ export const Header: React.FC = () => {
     const basketState = state.basket;
     const { basketData } = basketState
 
-    const handleSearch = (event) => {
+    const handleSearch = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
         dispatch(search(event.target.value))
     }
 

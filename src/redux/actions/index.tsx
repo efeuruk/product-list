@@ -16,7 +16,7 @@ export const search = (query: string) => ({
 })
 
 
-export const filterCategory = (value: any) => ({
+export const filterCategory = (value: string) => ({
     type: actionTypes.FILTER_CATEGORY,
     payload: value
 })

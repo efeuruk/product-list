@@ -15,7 +15,7 @@ interface Props {
 
 export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
 	filterFunction, renderAll, dispatch }) => {
-	const [checked, setChecked] = React.useState([]);
+	const [checked, setChecked] = React.useState<never[]>([]);
 
 	const handleChange = (index: never) => (event: React.ChangeEvent<HTMLInputElement>) => {
 		const currentIndex = checked.indexOf(index);
@@ -25,9 +25,7 @@ export const FilterMenu: React.FC<Props> = ({ classes, title, filterItems,
 		} else {
 			newChecked.splice(currentIndex, 1);
 		}
-
 		setChecked(newChecked);
-		// toplam state bir array olarak yollanmalı
 		event.target.checked ? dispatch(filterFunction(event.target.value)) : dispatch(renderAll());
 	};
 
