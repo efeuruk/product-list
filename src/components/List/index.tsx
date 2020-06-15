@@ -1,4 +1,4 @@
-// TODO: State'e ihtiyacın kalmazsa sil, marginBottom ver
+// TODO: marginBottom ver
 import React from 'react'
 import { ListItem } from '../ListItem';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
@@ -32,8 +32,6 @@ export const List: React.FC = () => {
     const classes: any = useStyles();
     const dispatch: any = useDispatch();
     const state: any = useSelector((state: DefaultRootState) => state);
-    const listItemsState = state.listItems;
-    const { data } = listItemsState;
     return (
         <Box>
             <Typography variant="h4" component="h2" style={{ marginLeft: "8px" }}>Products</Typography>

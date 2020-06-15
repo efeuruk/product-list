@@ -6,7 +6,6 @@ const initialState = {
     basketData: []
 }
 
-
 export default (state = initialState, action: any) => {
     switch (action.type) {
         case ADD_TO_BASKET:

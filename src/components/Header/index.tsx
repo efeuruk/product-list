@@ -109,8 +109,8 @@ export const Header: React.FC = () => {
     const state: any = useSelector((state: DefaultRootState) => state);
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const isMenuOpen = Boolean(anchorEl);
-    const listItemsState = state.listItems;
-    const { basketData } = listItemsState
+    const basketState = state.basket;
+    const { basketData } = basketState
 
     const handleBasketOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -205,9 +205,9 @@ export const Header: React.FC = () => {
                         aria-controls={menuId}
                         aria-haspopup="true"
                         onClick={handleBasketOpen}
-                        aria-label={`show ${listItemsState.index} new notifications`}
+                        aria-label={`show ${basketState.index} new notifications`}
                         color="inherit">
-                        <Badge badgeContent={listItemsState.index} color="secondary">
+                        <Badge badgeContent={basketState.index} color="secondary">
                             <ShoppingBasketIcon />
                         </Badge>
                     </IconButton>

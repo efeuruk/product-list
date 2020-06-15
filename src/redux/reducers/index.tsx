@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
+import basket from "./basket";
 import filters from "./filters";
-import listItems from "./listItems";
 
-export default combineReducers({ filters, listItems });
+export default combineReducers({ basket, filters });
