@@ -131,7 +131,6 @@ export const Header: React.FC = () => {
             open={isMenuOpen}
             onClose={handleBasketClose}
         >
-            {console.log(basketData)}
             {(basketData.length > 0) ? basketData?.map((data, index) => {
                 return (
                     <Box key={index}>
@@ -162,7 +161,6 @@ export const Header: React.FC = () => {
                 <MenuItem className={classes.empty}>
                     <Typography>Basket is empty</Typography>
                 </MenuItem>
-
             }
         </Menu>
     );

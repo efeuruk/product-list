@@ -1,7 +1,12 @@
 import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "../actions/actionTypes";
 import itemList from '../../data/itemList.json';
 
-const initialState = {
+interface State {
+    index: number;
+    basketData: [];
+}
+
+const initialState: State = {
     index: 0,
     basketData: []
 }

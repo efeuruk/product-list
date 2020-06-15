@@ -1,4 +1,3 @@
-// TODO: İçeriği ayrı bir componente taşı
 import React from 'react';
 import { Header } from './components/Header';
 import { MuiThemeProvider, createMuiTheme, createStyles, Theme, makeStyles } from '@material-ui/core/styles';

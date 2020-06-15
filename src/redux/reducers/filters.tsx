@@ -2,7 +2,11 @@ import { FILTER_CATEGORY, FILTER_BRAND, FILTER_PRICE, RENDER_ALL } from "../acti
 import itemList from '../../data/itemList.json';
 import filterList from '../../data/filterList.json';
 
-const initialState = {
+interface State {
+    filteredResult: {}[]
+}
+
+const initialState: State = {
     ...filterList,
     filteredResult: itemList
 }
@@ -15,8 +19,10 @@ export default (state = initialState, action) => {
                 filteredResult: itemList
             }
         case FILTER_CATEGORY:
+            console.log(action.payload[0])
             return {
                 ...state,
+                // Item list boşsa direkt olarak filtre ekelemesi yap, doluysa yeni eklenen filtreleri buraya ekle 
                 filteredResult: itemList.filter(item => {
                     return item.category === action.payload;
                 })

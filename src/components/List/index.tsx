@@ -1,4 +1,3 @@
-// TODO: marginBottom ver
 import React from 'react'
 import { ListItem } from '../ListItem';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
@@ -11,7 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             display: "flex",
-            flexWrap: "wrap"
+            flexWrap: "wrap",
+            marginBottom: theme.spacing(5)
         },
         cardContainer: {
             margin: theme.spacing(1),
