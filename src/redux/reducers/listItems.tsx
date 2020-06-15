@@ -1,6 +1,6 @@
 // REMOVE_FROM_BASKET'i implemente et, 
 import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "../actions/actionTypes";
-import { itemList } from '../../data/mockData';
+import itemList from '../../data/itemList.json';
 
 const initialState = {
     index: 0,
@@ -15,6 +15,7 @@ export default (state = initialState, action: any) => {
                 ...state,
                 index: state.index + 1,
                 basketData: [...state.basketData, itemList.filter(item => {
+                    console.log(item.id === action.payload)
                     return item.id === action.payload
                 })],
             }

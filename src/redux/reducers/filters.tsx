@@ -1,52 +1,9 @@
 import { FILTER_CATEGORY, FILTER_BRAND, FILTER_PRICE, RENDER_ALL } from "../actions/actionTypes";
-import { itemList } from '../../data/mockData';
+import itemList from '../../data/itemList.json';
+import filterList from '../../data/filterList.json';
+
 const initialState = {
-    categories: [
-        {
-            id: "Laptop",
-            name: "Laptop"
-        },
-        {
-            id: "Desktop",
-            name: "Desktop"
-        }
-    ],
-    brands: [
-        {
-            id: "Asus",
-            name: "Asus"
-        },
-        {
-            id: "Samsung",
-            name: "Samsung"
-        },
-        {
-            id: "Monster",
-            name: "Monster"
-        },
-        {
-            id: "Macbook",
-            name: "Macbook"
-        }
-    ],
-    priceMargins: [
-        {
-            id: "1000, 1500",
-            name: "1000 - 1500 TL"
-        },
-        {
-            id: "1500, 2000",
-            name: "1500 - 2000 TL"
-        },
-        {
-            id: "2000, 2500",
-            name: "2000 - 2500 TL"
-        },
-        {
-            id: "2500, 100000",
-            name: "2500 TL and above"
-        }
-    ],
+    ...filterList,
     filteredResult: itemList
 }
 

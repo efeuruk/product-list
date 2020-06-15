@@ -133,7 +133,7 @@ export const Header: React.FC = () => {
         >
             {console.log(basketData)}
             {(basketData.length > 0) ? basketData?.map((data, index) => {
-                console.log(data)
+                console.log(index)
                 return (
                     <Box key={index}>
                         <MenuItem>
@@ -150,7 +150,7 @@ export const Header: React.FC = () => {
                                     <Typography component="p">Price: {data[0]?.price} TL</Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button className={classes.button} variant="contained" color="secondary" disableElevation onClick={() => dispatch(removeFromBasket(0))}>
+                                    <Button className={classes.button} variant="contained" color="secondary" disableElevation onClick={() => dispatch(removeFromBasket(index))}>
                                         Remove From Basket
                                         </Button>
                                 </CardActions>
