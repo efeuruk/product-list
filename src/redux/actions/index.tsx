@@ -5,7 +5,7 @@ export const addToBasket = (id: number) => ({
     payload: id
 });
 
-export const removeFromBasket = (id: number) => ({
+export const removeFromBasket = (id: object) => ({
     type: actionTypes.REMOVE_FROM_BASKET,
     payload: id
 })
