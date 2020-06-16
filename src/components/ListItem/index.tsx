@@ -17,17 +17,23 @@ interface Props {
 
 export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, classes }) => {
     return (
-        <Grid item key={data.productName} className={classes.cardContainer}>
-            <Card className={classes.card}>
+        <Grid item xs={12} sm={6} md={4} lg={3} key={data.productName}>
+            <Card>
                 <CardMedia
+                    className={classes.img}
                     component="img"
                     alt={data.image}
                     image={data.image}
+                    width="350px"
+                    height="350px"
                 />
-                <Box className={classes.cardContent}>
+                <Box>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            {data.productName}, {data.category}
+                            {data.productName}
+                        </Typography>
+                        <Typography gutterBottom variant="subtitle1" component="p">
+                            {data.category}
                         </Typography>
                         <Typography component="p">Price: {data.price} TL</Typography>
                     </CardContent>

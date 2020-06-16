@@ -8,29 +8,14 @@ import { addToBasket } from '../../redux/actions'
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            marginBottom: theme.spacing(5)
-        },
-        cardContainer: {
-            margin: theme.spacing(2),
-            width: "100%",
-            [theme.breakpoints.up('sm')]: {
-                maxWidth: "350px",
-            },
-        },
-        card: {
-            height: "100%",
-            display: "flex",
-            flexFlow: "column",
-            justifyContent: "space-between",
-        },
-        cardContent: {
-
+            flexGrow: 1,
+            margin: theme.spacing(0, "auto", 5)
         },
         notAvailable: {
             marginLeft: theme.spacing(1)
+        },
+        img: {
+            objectFit: "contain"
         }
     }),
 );
@@ -41,7 +26,7 @@ export const List: React.FC = () => {
     const state: any = useSelector((state: DefaultRootState) => state);
     const filterState = state.filters;
     return (
-        <Grid className={classes.container}>
+        <Grid container spacing={2} className={classes.container}>
             {(filterState.filteredResult.length > 0) ? filterState.filteredResult.map((data, index) => (
                 <ListItem
                     key={index}

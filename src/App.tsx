@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexWrap: "wrap",
       marginTop: theme.spacing(6),
-      [theme.breakpoints.up('sm')]: {
+      [theme.breakpoints.up('md')]: {
         flexWrap: "noWrap"
       },
     }

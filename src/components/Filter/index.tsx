@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(3),
             height: "100%",
             width: "100%",
-            [theme.breakpoints.up('sm')]: {
+            [theme.breakpoints.up('md')]: {
                 width: "auto",
             },
         },
