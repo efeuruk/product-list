@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         filter: {
             marginBottom: theme.spacing(3),
-            background: "#959595",
+            background: "#bdbdbd",
             padding: theme.spacing(3),
             height: "100%",
             width: "100%",

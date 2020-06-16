@@ -9,7 +9,9 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         container: {
             flexGrow: 1,
-            margin: theme.spacing(0, "auto", 5)
+            [theme.breakpoints.up('md')]: {
+                margin: theme.spacing(0, 1, 5, 3),
+            },
         },
         notAvailable: {
             marginLeft: theme.spacing(1)
@@ -26,7 +28,7 @@ export const List: React.FC = () => {
     const state: any = useSelector((state: DefaultRootState) => state);
     const filterState = state.filters;
     return (
-        <Grid container spacing={2} className={classes.container}>
+        <Grid container spacing={3} className={classes.container}>
             {(filterState.filteredResult.length > 0) ? filterState.filteredResult.map((data, index) => (
                 <ListItem
                     key={index}
