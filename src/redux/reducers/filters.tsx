@@ -4,13 +4,11 @@ import filterList from '../../data/filterList.json';
 
 interface State {
     filteredResult: {}[]
-    search: string;
 }
 
 const initialState: State = {
     ...filterList,
     filteredResult: itemList,
-    search: ''
 }
 
 export default (state = initialState, action) => {
@@ -45,8 +43,8 @@ export default (state = initialState, action) => {
                 })
             }
         case FILTER_PRICE:
-            const lowerBound = parseInt(action.payload.split(',')[0]);
-            const higherBound = parseInt(action.payload.split(',')[1]);
+            const lowerBound: number = parseInt(action.payload.split(',')[0]);
+            const higherBound: number = parseInt(action.payload.split(',')[1]);
             return {
                 ...state,
                 filteredResult: itemList.filter(item => {

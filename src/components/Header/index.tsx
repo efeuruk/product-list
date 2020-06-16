@@ -46,9 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
             },
         },
         shoppingBasket: {
-            marginRight: theme.spacing(4),
+            margin: theme.spacing(0, 2, 0, 6),
             [theme.breakpoints.up('sm')]: {
-                marginRight: "0"
+                marginRight: theme.spacing(3),
             },
         },
         search: {
