@@ -8,3 +8,5 @@ From item list you can add items to basket with add to basket button, when you c
 and with the remove from basket button you can remove it from the basket.
 
 Filters are working one by one.
+
+Prodcut url: https://efeuruk.github.io/product-list/
