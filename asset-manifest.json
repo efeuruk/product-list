@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/efeuruk/product-list/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/efeuruk/product-list/static/js/main.1635b8a3.chunk.js",
-    "main.js.map": "/efeuruk/product-list/static/js/main.1635b8a3.chunk.js.map",
-    "runtime-main.js": "/efeuruk/product-list/static/js/runtime-main.c2401b81.js",
-    "runtime-main.js.map": "/efeuruk/product-list/static/js/runtime-main.c2401b81.js.map",
-    "static/js/2.646da37f.chunk.js": "/efeuruk/product-list/static/js/2.646da37f.chunk.js",
-    "static/js/2.646da37f.chunk.js.map": "/efeuruk/product-list/static/js/2.646da37f.chunk.js.map",
-    "index.html": "/efeuruk/product-list/index.html",
-    "precache-manifest.ad5375ba3e57b81a7ad072a8523de9ba.js": "/efeuruk/product-list/precache-manifest.ad5375ba3e57b81a7ad072a8523de9ba.js",
-    "service-worker.js": "/efeuruk/product-list/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/efeuruk/product-list/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.646da37f.chunk.js.LICENSE.txt": "/efeuruk/product-list/static/js/2.646da37f.chunk.js.LICENSE.txt"
+    "main.css": "/product-list/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/product-list/static/js/main.776963f7.chunk.js",
+    "main.js.map": "/product-list/static/js/main.776963f7.chunk.js.map",
+    "runtime-main.js": "/product-list/static/js/runtime-main.b766b492.js",
+    "runtime-main.js.map": "/product-list/static/js/runtime-main.b766b492.js.map",
+    "static/js/2.646da37f.chunk.js": "/product-list/static/js/2.646da37f.chunk.js",
+    "static/js/2.646da37f.chunk.js.map": "/product-list/static/js/2.646da37f.chunk.js.map",
+    "index.html": "/product-list/index.html",
+    "precache-manifest.54d3dbc20d7d4784b843acebad5e0487.js": "/product-list/precache-manifest.54d3dbc20d7d4784b843acebad5e0487.js",
+    "service-worker.js": "/product-list/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/product-list/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.646da37f.chunk.js.LICENSE.txt": "/product-list/static/js/2.646da37f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c2401b81.js",
+    "static/js/runtime-main.b766b492.js",
     "static/js/2.646da37f.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.1635b8a3.chunk.js"
+    "static/js/main.776963f7.chunk.js"
   ]
 }
