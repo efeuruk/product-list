@@ -18,6 +18,37 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         img: {
             objectFit: "contain"
+        },
+        actions: {
+            flexFlow: "column",
+            alignItems: "flex-start"
+        },
+        buttonContainer: {
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-start",
+            marginBottom: theme.spacing(1)
+        },
+        button: {
+            border: "1px solid black",
+            padding: "3px",
+            minWidth: "32px",
+            marginLeft: theme.spacing(1),
+            '&:hover': {
+                backgroundColor: "teal",
+                color: "white"
+            },
+        },
+        quantity: {
+            marginLeft: theme.spacing(3),
+            alignSelf: "center"
+        },
+        addToBasket: {
+            border: "1px solid teal",
+            '&:hover': {
+                backgroundColor: "teal",
+                color: "white"
+            },
         }
     }),
 );

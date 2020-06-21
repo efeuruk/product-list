@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Grid, Typography } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -11,11 +11,23 @@ import Box from "@material-ui/core/Box";
 interface Props {
     data: any;
     dispatch: any;
-    addToBasket: (id: number) => void;
+    addToBasket: (id: number, quantity: number) => void;
     classes: any;
 }
 
+
 export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, classes }) => {
+    const [quantity, setQuantity] = useState(0);
+
+    const incrementQuantity = () => {
+        setQuantity(quantity + 1)
+    }
+
+    const decrementQuantity = () => {
+        if (quantity > 0)
+            setQuantity(quantity - 1)
+    }
+
     return (
         <Grid item xs={12} sm={6} md={4} lg={3} key={data.productName}>
             <Card>
@@ -37,8 +49,19 @@ export const ListItem: React.FC<Props> = ({ data, dispatch, addToBasket, classes
                         </Typography>
                         <Typography component="p">Price: {data.price} TL</Typography>
                     </CardContent>
-                    <CardActions>
-                        <Button size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id))}>
+                    <CardActions className={classes.actions}>
+                        <Box className={classes.buttonContainer}>
+                            <Box style={{ alignSelf: "flex-start" }} component="span">
+                                <Button className={classes.button} onClick={incrementQuantity}>
+                                    +
+                                </Button>
+                                <Button className={classes.button} onClick={decrementQuantity}>
+                                    -
+                                </Button>
+                            </Box>
+                            <Typography className={classes.quantity}>{quantity}</Typography>
+                        </Box>
+                        <Button className={classes.addToBasket} size="small" color="secondary" onClick={() => dispatch(addToBasket(data.id, quantity))}>
                             Add to Basket
                         </Button>
                     </CardActions>
