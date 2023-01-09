@@ -4,16 +4,16 @@ export const RENDER_ALL: string = "RENDER_ALL";
 export const FILTER_CATEGORY: string = "FILTER_CATEGORY_OR_BRAND";
 export const FILTER_PRICE: string = "FILTER_PRICE";
 export const FILTER_BRAND: string = "FILTER_BRAND";
-export const SEARCH: string = "SEARCH"
+export const SEARCH: string = "SEARCH";
 
 const actionTypes = {
-    ADD_TO_BASKET,
-    REMOVE_FROM_BASKET,
-    RENDER_ALL,
-    FILTER_CATEGORY,
-    FILTER_BRAND,
-    FILTER_PRICE,
-    SEARCH
-}
+  ADD_TO_BASKET,
+  REMOVE_FROM_BASKET,
+  RENDER_ALL,
+  FILTER_CATEGORY,
+  FILTER_BRAND,
+  FILTER_PRICE,
+  SEARCH,
+};
 
 export default actionTypes;

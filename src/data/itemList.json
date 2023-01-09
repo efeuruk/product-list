@@ -1,65 +1,66 @@
-[{
-        "id": 0,
-        "image": "https://www.asus.com/media/global/ProductLevel3/35305_n.jpg",
-        "productName": "Asus 1",
-        "price": 1000,
-        "category": "Laptop",
-        "brand": "Asus"
-    },
-    {
-        "id": 1,
-        "image": "https://img.letgo.com/images/de/12/28/88/de122888f56972216a243d5855c7aa95.jpeg?impolicy=img_600_pwa",
-        "productName": "Asus 2",
-        "price": 1200,
-        "category": "Desktop",
-        "brand": "Asus"
-    },
-    {
-        "id": 2,
-        "image": "https://4.imimg.com/data4/JT/KI/MY-12480947/samsung-desktop-computer-500x500-500x500.jpg",
-        "productName": "Samsung 1",
-        "price": 1500,
-        "category": "Desktop",
-        "brand": "Samsung"
-    },
-    {
-        "id": 3,
-        "image": "https://www.91-img.com/pictures/laptops/samsung/samsung-np305e5z-s01in-apu-dual-core-4-gb-500-gb-dos-1-gb-39612-large-1.jpg",
-        "productName": "Samsung 2",
-        "price": 1700,
-        "category": "Laptop",
-        "brand": "Samsung"
-    },
-    {
-        "id": 4,
-        "image": "https://mcdn01.gittigidiyor.net/44081/440812059_0.jpg",
-        "productName": "Monster 1",
-        "price": 2500,
-        "category": "Laptop",
-        "brand": "Monster"
-    },
-    {
-        "id": 5,
-        "image": "https://mcdn01.gittigidiyor.net/44081/440812059_0.jpg",
-        "productName": "Monster 2",
-        "price": 3700,
-        "category": "Laptop",
-        "brand": "Monster"
-    },
-    {
-        "id": 6,
-        "image": "https://images-na.ssl-images-amazon.com/images/I/71pheYd9W0L._AC_SL1500_.jpg",
-        "productName": "iMac",
-        "price": 7500,
-        "category": "Desktop",
-        "brand": "Macbook"
-    },
-    {
-        "id": 7,
-        "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-gold-select-201810?wid=892&hei=820&&qlt=80&.v=1541713859040",
-        "productName": "Macbook Air",
-        "price": 12500,
-        "category": "Laptop",
-        "brand": "Macbook"
-    }
+[
+  {
+    "id": 0,
+    "image": "https://www.asus.com/media/global/ProductLevel3/35305_n.jpg",
+    "productName": "Asus 1",
+    "price": 1000,
+    "category": "Laptop",
+    "brand": "Asus"
+  },
+  {
+    "id": 1,
+    "image": "https://img.letgo.com/images/de/12/28/88/de122888f56972216a243d5855c7aa95.jpeg?impolicy=img_600_pwa",
+    "productName": "Asus 2",
+    "price": 1200,
+    "category": "Desktop",
+    "brand": "Asus"
+  },
+  {
+    "id": 2,
+    "image": "https://4.imimg.com/data4/JT/KI/MY-12480947/samsung-desktop-computer-500x500-500x500.jpg",
+    "productName": "Samsung 1",
+    "price": 1500,
+    "category": "Desktop",
+    "brand": "Samsung"
+  },
+  {
+    "id": 3,
+    "image": "https://www.91-img.com/pictures/laptops/samsung/samsung-np305e5z-s01in-apu-dual-core-4-gb-500-gb-dos-1-gb-39612-large-1.jpg",
+    "productName": "Samsung 2",
+    "price": 1700,
+    "category": "Laptop",
+    "brand": "Samsung"
+  },
+  {
+    "id": 4,
+    "image": "https://mcdn01.gittigidiyor.net/44081/440812059_0.jpg",
+    "productName": "Monster 1",
+    "price": 2500,
+    "category": "Laptop",
+    "brand": "Monster"
+  },
+  {
+    "id": 5,
+    "image": "https://mcdn01.gittigidiyor.net/44081/440812059_0.jpg",
+    "productName": "Monster 2",
+    "price": 3700,
+    "category": "Laptop",
+    "brand": "Monster"
+  },
+  {
+    "id": 6,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71pheYd9W0L._AC_SL1500_.jpg",
+    "productName": "iMac",
+    "price": 7500,
+    "category": "Desktop",
+    "brand": "Macbook"
+  },
+  {
+    "id": 7,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-gold-select-201810?wid=892&hei=820&&qlt=80&.v=1541713859040",
+    "productName": "Macbook Air",
+    "price": 12500,
+    "category": "Laptop",
+    "brand": "Macbook"
+  }
 ]

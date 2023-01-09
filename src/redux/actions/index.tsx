@@ -1,34 +1,33 @@
 import actionTypes from "./actionTypes";
 
 export const addToBasket = (id: number) => ({
-    type: actionTypes.ADD_TO_BASKET,
-    payload: id
+  type: actionTypes.ADD_TO_BASKET,
+  payload: id,
 });
 
 export const removeFromBasket = (id: object) => ({
-    type: actionTypes.REMOVE_FROM_BASKET,
-    payload: id
-})
+  type: actionTypes.REMOVE_FROM_BASKET,
+  payload: id,
+});
 
 export const search = (query: string) => ({
-    type: actionTypes.SEARCH,
-    payload: query
-})
-
+  type: actionTypes.SEARCH,
+  payload: query,
+});
 
 export const filterCategory = (value: string) => ({
-    type: actionTypes.FILTER_CATEGORY,
-    payload: value
-})
+  type: actionTypes.FILTER_CATEGORY,
+  payload: value,
+});
 
 export const filterBrand = (value: string) => ({
-    type: actionTypes.FILTER_BRAND,
-    payload: value
-})
+  type: actionTypes.FILTER_BRAND,
+  payload: value,
+});
 
 export const filterPriceMargin = (value: string) => ({
-    type: actionTypes.FILTER_PRICE,
-    payload: value
-})
+  type: actionTypes.FILTER_PRICE,
+  payload: value,
+});
 
-export const renderAll = () => ({ type: actionTypes.RENDER_ALL })
+export const renderAll = () => ({ type: actionTypes.RENDER_ALL });

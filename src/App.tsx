@@ -1,19 +1,25 @@
-import React from 'react';
-import { Header } from './components/Header';
-import { MuiThemeProvider, createMuiTheme, createStyles, Theme, makeStyles } from '@material-ui/core/styles';
-import { Box, Container } from '@material-ui/core';
-import { Filter } from './components/Filter';
-import { List } from './components/List';
+import React from "react";
+import { Header } from "./components/Header";
+import {
+  MuiThemeProvider,
+  createMuiTheme,
+  createStyles,
+  Theme,
+  makeStyles,
+} from "@material-ui/core/styles";
+import { Box, Container } from "@material-ui/core";
+import { Filter } from "./components/Filter";
+import { List } from "./components/List";
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#000000"
+      main: "#000000",
     },
     secondary: {
-      main: "#00796b"
-    }
-  }
+      main: "#00796b",
+    },
+  },
 });
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,11 +28,11 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexWrap: "wrap",
       marginTop: theme.spacing(6),
-      [theme.breakpoints.up('md')]: {
-        flexWrap: "noWrap"
+      [theme.breakpoints.up("md")]: {
+        flexWrap: "noWrap",
       },
-    }
-  }),
+    },
+  })
 );
 
 const App: React.FC = () => {
@@ -42,6 +48,6 @@ const App: React.FC = () => {
       </Container>
     </MuiThemeProvider>
   );
-}
+};
 
 export default App;
